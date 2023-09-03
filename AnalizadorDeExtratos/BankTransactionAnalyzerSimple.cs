@@ -1,5 +1,8 @@
-﻿using System.ComponentModel;
+﻿using Microsoft.VisualBasic;
+using System.ComponentModel;
+using System.Globalization;
 using System.IO;
+using System.Runtime.Serialization;
 
 namespace AnalizadorDeExtratos;
 
@@ -9,43 +12,39 @@ public class BankTransactionAnalyzerSimple
 
     public static void Main(string[] args)
     {
-        string[] readText = File.ReadAllLines(RESOURCES + args[0]);
-        GetTotalTransactions(readText);
-        GetTotalTransactionsForJanuary(readText);
+        var filename = args[0];
+        var bankStatementParser = new BankStatementCSVParser();
+        string[] readText = File.ReadAllLines(RESOURCES + filename);
+        List<BankTransaction> bankTransactions = bankStatementParser.ParseLinesFromCSV(readText);
+        CalculateTotalAmount(bankTransactions);
+        SelectInMonth(bankTransactions, 2);
+        
 
 
     }
 
-    public static void GetTotalTransactions(string[] file)
+    public static void CalculateTotalAmount(List<BankTransaction> bankTransactions)
     {
         double total = 0d;
-        foreach (string lines in file)
+        foreach (BankTransaction bankTransaction in bankTransactions)
         {
-            string[] columns = lines.Split(',');
-            double amount = Convert.ToDouble(columns[1]);
-            DateTime date = Convert.ToDateTime(columns[0]);
-            total += amount;
+            total += bankTransaction.Amount;
         }
 
         Console.WriteLine("the total for all transactions is " + total);
     }
 
-    public static void GetTotalTransactionsForJanuary(string[] file)
+    public static void SelectInMonth(List<BankTransaction> bankTransactions, int monthIndex)
     {
         double total = 0d;
-        foreach (string lines in file)
+        foreach (BankTransaction bankTransaction in bankTransactions)
         {
-            string[] columns = lines.Split(',');
-            double amount = Convert.ToDouble(columns[1]);
-            DateTime date = Convert.ToDateTime(columns[0]);
-
-            if (date.Month == 1 )
-            total += amount;
+            if (bankTransaction.Date.Month == monthIndex)
             {
-
+                total += bankTransaction.Amount;
             }
         }
 
-        Console.WriteLine("the total for all transactions in january is " + total);
+        Console.WriteLine($"the total for all transactions in {CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(monthIndex)} is {total}");
     }
 }
