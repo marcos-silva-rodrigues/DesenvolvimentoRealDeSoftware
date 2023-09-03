@@ -3,12 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalizadorDeExtratos", "AnalizadorDeExtratos\AnalizadorDeExtratos.csproj", "{289F846E-1B93-45F1-9A02-49662E301D32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnalizadorDeExtratos", "AnalizadorDeExtratos\AnalizadorDeExtratos.csproj", "{289F846E-1B93-45F1-9A02-49662E301D32}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens de Solução", "{456FC8F8-E513-4370-AD75-F1E1DE760CCC}"
 	ProjectSection(SolutionItems) = preProject
 		data.csv = data.csv
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalizadorDeExtratos.Tests", "AnalizadorDeExtratos.Tests\AnalizadorDeExtratos.Tests.csproj", "{10C08284-90C5-4DEE-8CA5-C139838D67E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +22,10 @@ Global
 		{289F846E-1B93-45F1-9A02-49662E301D32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{289F846E-1B93-45F1-9A02-49662E301D32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{289F846E-1B93-45F1-9A02-49662E301D32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10C08284-90C5-4DEE-8CA5-C139838D67E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10C08284-90C5-4DEE-8CA5-C139838D67E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10C08284-90C5-4DEE-8CA5-C139838D67E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10C08284-90C5-4DEE-8CA5-C139838D67E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
