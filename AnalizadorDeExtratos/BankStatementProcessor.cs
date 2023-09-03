@@ -47,5 +47,50 @@ namespace AnalizadorDeExtratos
             }
             return total;
         }
+
+        public double CalculateMinAmount(Period? period = null)
+        {
+            double min = 0d;
+            foreach (BankTransaction bankTransaction in BankTransactions)
+            {
+                if (bankTransaction.Amount < min)
+                {
+                    if (period == null)
+                    {
+                        min = bankTransaction.Amount;
+                    } else 
+                    {
+                        if (period.Range(bankTransaction.Date))
+                        {
+                            min = bankTransaction.Amount;
+                        }
+                    }
+                }
+            }
+            return min;
+        }
+
+        public double CalculateMaxAmount(Period? period = null)
+        {
+            double max = 0d;
+            foreach (BankTransaction bankTransaction in BankTransactions)
+            {
+                if (bankTransaction.Amount > max)
+                {
+                    if (period == null)
+                    {
+                        max = bankTransaction.Amount;
+                    }
+                    else
+                    {
+                        if (period.Range(bankTransaction.Date))
+                        {
+                            max = bankTransaction.Amount;
+                        }
+                    }
+                }
+            }
+            return max;
+        }
     }
 }
