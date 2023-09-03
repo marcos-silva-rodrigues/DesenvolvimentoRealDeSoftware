@@ -2,23 +2,21 @@
 
 namespace AnalizadorDeExtratos;
 
-public class BankTransactionAnalyzerSimple
+public class BankTransactionAnalyzer
 {
     private static readonly string RESOURCES = "../";
 
-    public static void Main(string[] args)
+    public void Analyze(string filename, BankStatementParser bankStatementParser)
     {
-        var filename = args[0];
-        var bankStatementParser = new BankStatementCSVParser();
         string[] readText = File.ReadAllLines(RESOURCES + filename);
 
-        List<BankTransaction> bankTransactions = bankStatementParser.ParseLinesFromCSV(readText);
+        List<BankTransaction> bankTransactions = bankStatementParser.ParseLinesFrom(readText);
         var bankProcessor = new BankStatementProcessor(bankTransactions);
 
         CollectSummary(bankProcessor);
     }
 
-    public static void CollectSummary(BankStatementProcessor bankProcessor)
+    private void CollectSummary(BankStatementProcessor bankProcessor)
     {
         Console.WriteLine("the total for all transactions is " + bankProcessor.CalculateTotalAmount());
         Console.WriteLine("the total for all transactions in January is " + bankProcessor.CalculateTotalInMonth(1));

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace AnalizadorDeExtratos
 {
-    public class BankStatementCSVParser
+    public class BankStatementCSVParser: BankStatementParser
     {
        
-        private BankTransaction ParseFromCsv(string line)
+        public BankTransaction ParseFrom(string line)
         {
             string[] columns = line.Split(',');
             DateTime date = Convert.ToDateTime(columns[0]);
@@ -19,12 +19,12 @@ namespace AnalizadorDeExtratos
             return new BankTransaction(date, amount, description);
         }
 
-        public List<BankTransaction> ParseLinesFromCSV(string[] lines)
+        public List<BankTransaction> ParseLinesFrom(string[] lines)
         {
             List<BankTransaction> list = new List<BankTransaction>();
             foreach (string line in lines)
             {
-                list.Add(ParseFromCsv(line));
+                list.Add(ParseFrom(line));
             }
 
             return list;
