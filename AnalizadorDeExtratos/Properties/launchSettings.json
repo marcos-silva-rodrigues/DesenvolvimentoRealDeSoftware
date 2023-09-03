@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "AnalizadorDeExtratos": {
+      "commandName": "Project",
+      "commandLineArgs": "data.csv\r\n",
+      "workingDirectory": "E:\\Estudos\\DesenvolvimentoRealDeSoftware\\AnalizadorDeExtratos",
+      "remoteDebugEnabled": false
+    }
+  }
+}
