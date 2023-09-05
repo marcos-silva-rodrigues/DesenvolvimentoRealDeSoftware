@@ -26,6 +26,24 @@ namespace AnalizadorDeExtratos.Tests
         }
 
         [Fact]
+        public void ShouldReturnTotalAmount()
+        {
+            Assert.Equal(7550, processor.CalculateTotalAmount());
+        }
+
+        [Fact]
+        public void ShouldReturnTotalAmountWithFilterPerMonth()
+        {
+            Assert.Equal(-200, processor.CalculateTotalInMonth(1));
+        }
+
+        [Fact]
+        public void ShouldReturnTotalAmountWithFilterPerCategory()
+        {
+            Assert.Equal(8000, processor.CalculateTotalForCategory("Salary"));
+        }
+
+        [Fact]
         public void ShouldReturnMinAmount()
         {
             Assert.Equal(-200, processor.CalculateMinAmount());

@@ -8,9 +8,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens de Solução", "{456FC8F8-E513-4370-AD75-F1E1DE760CCC}"
 	ProjectSection(SolutionItems) = preProject
 		data.csv = data.csv
+		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalizadorDeExtratos.Tests", "AnalizadorDeExtratos.Tests\AnalizadorDeExtratos.Tests.csproj", "{10C08284-90C5-4DEE-8CA5-C139838D67E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnalizadorDeExtratos.Tests", "AnalizadorDeExtratos.Tests\AnalizadorDeExtratos.Tests.csproj", "{10C08284-90C5-4DEE-8CA5-C139838D67E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

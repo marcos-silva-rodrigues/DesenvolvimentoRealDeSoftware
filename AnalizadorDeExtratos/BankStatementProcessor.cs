@@ -14,91 +14,50 @@ namespace AnalizadorDeExtratos
 
         public  double CalculateTotalAmount()
         {
-            double total = 0d;
-            foreach (BankTransaction bankTransaction in BankTransactions)
-            {
-                total += bankTransaction.Amount;
-            }
-            return total;
+            return BankTransactions.Aggregate(0d, (acc, bankTransaction) =>  acc + bankTransaction.Amount);
         }
 
         public double CalculateTotalInMonth(int monthIndex)
         {
-            double total = 0d;
-            foreach (BankTransaction bankTransaction in BankTransactions)
-            {
-                if (bankTransaction.Date.Month == monthIndex)
-                {
-                    total += bankTransaction.Amount;
-                }
-            }
-            return total;
+            return BankTransactions
+                .Where(bankTransaction => bankTransaction.Date.Month == monthIndex)
+                .Aggregate(0d, (acc, bankTransaction) => acc + bankTransaction.Amount);
         }
 
         public double CalculateTotalForCategory(string category)
         {
-            double total = 0d;
-            foreach (BankTransaction bankTransaction in BankTransactions)
-            {
-                if (bankTransaction.Description.Equals(category))
-                {
-                    total += bankTransaction.Amount;
-                }
-            }
-            return total;
+            return BankTransactions
+                .Where(bankTransaction => bankTransaction.Description.Equals(category))
+                .Aggregate(0d, (acc, bankTransaction) => acc + bankTransaction.Amount);
         }
 
         public double CalculateMinAmount()
         {
-            double min = 0d;
-            foreach (BankTransaction bankTransaction in BankTransactions)
-            {
-                if (bankTransaction.Amount < min)
-                {
-                    min = bankTransaction.Amount;
-                }
-            }
-            return min;
+            return BankTransactions.Min(bankTransaction => bankTransaction.Amount);
         }
 
         public double CalculateMinAmount(Period period)
         {
-            double min = 0d;
-            foreach (BankTransaction bankTransaction in BankTransactions)
-            {
-                if (bankTransaction.Amount < min && period.Range(bankTransaction.Date))
-                {
-                    min = bankTransaction.Amount;
-                }
-            }
-            return min;
+            return BankTransactions
+                .Where(bankTransaction => period.Range(bankTransaction.Date))
+                .Min(bankTransaction => bankTransaction.Amount);
         }
 
         public double CalculateMaxAmount()
         {
-            double max = 0d;
-            foreach (BankTransaction bankTransaction in BankTransactions)
-            {
-                if (bankTransaction.Amount > max)
-                {
-                    max = bankTransaction.Amount;
-                }
-            }
-            return max;
+            return BankTransactions.Max(bankTransaction => bankTransaction.Amount);
         }
 
         public double CalculateMaxAmount(Period period)
         {
-            double max = 0d;
-            foreach (BankTransaction bankTransaction in BankTransactions)
-            {
-                if (bankTransaction.Amount > max && period.Range(bankTransaction.Date))
-                {
-                    max = bankTransaction.Amount;
-        
-                }
-            }
-            return max;
+            return BankTransactions
+                .Where(bankTransaction => period.Range(bankTransaction.Date))
+                .Max(bankTransaction => bankTransaction.Amount);
+        }
+
+        public List<BankTransaction> FindTransaction(Func<BankTransaction, bool> predicate)
+        {
+            return BankTransactions.Where(predicate).ToList();   
         }
     }
 }
