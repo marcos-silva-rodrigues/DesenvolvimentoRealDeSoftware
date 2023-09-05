@@ -3,7 +3,10 @@
 Um livro para apreender algumas principios e práticas sobre desenvolvimento de software, os exemplos dos livros são em java pórem estou neste repositorio estou praticando com C#/.Net
 
 ## Explicifico do Livro
-
++ KISS, manter curto e simples 
++ DRY, não manter código duplicado, para evitar ter quer fazer multiplas modificações no código
++ SRP, Responsabilidade Unica, uma classe deve ter apenas uma razão para mudar
++ Coesão, mensura quanto as responsabilidade da classe ou métodos esão intimamente relacionadas
 
 ## Explicifico do C#/.NET
 
