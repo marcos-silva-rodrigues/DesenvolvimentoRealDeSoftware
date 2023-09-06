@@ -12,6 +12,18 @@ namespace AnalizadorDeExtratos
                 BankTransactions = bankTransactions;
         }
 
+        public SummaryStatistics SummaryTransaction()
+        {
+            var amountList = BankTransactions.Select(bankTransaction => bankTransaction.Amount);
+            return new SummaryStatistics(
+                amountList.Max(),
+                amountList.Min(),
+                amountList.Average(),
+                amountList.Sum()
+                );
+   
+        }
+
         public  double CalculateTotalAmount()
         {
             return BankTransactions.Aggregate(0d, (acc, bankTransaction) =>  acc + bankTransaction.Amount);

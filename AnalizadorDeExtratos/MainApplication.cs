@@ -13,7 +13,8 @@ namespace AnalizadorDeExtratos
         {
             var bankTransactionAnalyzer = new BankTransactionAnalyzer();
             BankStatementParser parser = new BankStatementCSVParser();
-            bankTransactionAnalyzer.Analyze(args[0], parser);
+            Exporter exporter = new ConsoleExporter();
+            bankTransactionAnalyzer.Analyze(args[0], parser, exporter);
         }
     }
 }
