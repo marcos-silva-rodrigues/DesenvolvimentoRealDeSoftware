@@ -11,10 +11,11 @@ namespace AnalizadorDeExtratos
 
         public static void Main(string[] args)
         {
+            var fielImporter = new FileImporter(args[0]);
             var bankTransactionAnalyzer = new BankTransactionAnalyzer();
             BankStatementParser parser = new BankStatementCSVParser();
             Exporter exporter = new ConsoleExporter();
-            bankTransactionAnalyzer.Analyze(args[0], parser, exporter);
+            bankTransactionAnalyzer.Analyze(fielImporter, parser, exporter);
         }
     }
 }

@@ -11,7 +11,7 @@ namespace AnalizadorDeExtratos
         public string Export(SummaryStatistics statistics)
         {
             var result = "the sum is " + statistics.Sum + "\n" +
-            "the min is" + statistics.Min + "\n" +
+            "the min is " + statistics.Min + "\n" +
             "the max is " + statistics.Max + "\n" +
             "the average is " + statistics.Average;
 

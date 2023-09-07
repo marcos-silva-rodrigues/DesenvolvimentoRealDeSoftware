@@ -4,11 +4,9 @@ namespace AnalizadorDeExtratos;
 
 public class BankTransactionAnalyzer
 {
-    private static readonly string RESOURCES = "../";
-
-    public void Analyze(string filename, BankStatementParser bankStatementParser, Exporter exporter)
+       public void Analyze(Importer importer, BankStatementParser bankStatementParser, Exporter exporter)
     {
-        string[] readText = File.ReadAllLines(RESOURCES + filename);
+        string[] readText = importer.importer();
 
         List<BankTransaction> bankTransactions = bankStatementParser.ParseLinesFrom(readText);
         var bankProcessor = new BankStatementProcessor(bankTransactions);
