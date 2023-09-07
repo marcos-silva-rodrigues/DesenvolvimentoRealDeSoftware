@@ -69,6 +69,22 @@ namespace AnalizadorDeExtratos.Tests
             Assert.Equal(2000, processor.CalculateMaxAmount(period));
         }
 
+        [Fact]
+        public void ShouldReturnTransactionExpenses()
+        {
+            var transactions = processor.FindTransaction(transaction => transaction.Amount < 0);
+            Assert.Equal(4, transactions.Count);
+        }
+
+        [Fact]
+        public void ShouldReturnSummaryStatistics()
+        {
+            var statistics = processor.SummaryTransaction();
+            Assert.Equal(6000, statistics.Max);
+            Assert.Equal(-200, statistics.Min);
+            Assert.Equal(1258.33, statistics.Average, 2);
+            Assert.Equal(7550, statistics.Sum);
+        }
 
     }
 }
