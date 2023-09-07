@@ -19,7 +19,7 @@ namespace AnalizadorDeExtratos
 
         public bool Range(DateTime date)
         {
-           return date >= _start &&  date <= _end;
+           return date >= _start && date <= _end;
         }
     }
 }
