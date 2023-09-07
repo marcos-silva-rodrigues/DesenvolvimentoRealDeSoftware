@@ -17,6 +17,9 @@ Lógica | Se agrupam por uma mesma natureza ou objetivo porem com varias derivaçõ
 Utilitária | Agrupa uma serie de metodos que podem ser utilizadso por varios clientes  | simples de implementar | mais dificil de racionalizar a responsabilidade da classe
 Temporal | Relativas ao tempo, com ser chamada na inicialização e finalização de operadoções | N\D | mais dificil de entender e utilizar operações individuais
 
++ Exceções verificadas, são aquelas nas caso oferecemos umma maneira de se recuperar
++ Exceções não verificadas, podem ser geradas a qualquer momento da execução
++ Padrão Notification, classe de dominio so para capturar erros, assim podemos controlar/diminiur a quantidade de fluxos alternativos que mossa aplicação terá quer percorrer, podendo ainda lançar um feedback sobre todos os erros cometidos
 
 ## Explicifico do C#/.NET
 + Gerando relatorio de cobertura de testes com xUnit:
