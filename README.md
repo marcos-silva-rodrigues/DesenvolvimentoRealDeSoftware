@@ -1,31 +1,31 @@
 # Desenvolvimento Real de Software
 
-Um livro para apreender algumas principios e pr·ticas sobre desenvolvimento de software, os exemplos dos livros s„o em java pÛrem estou neste repositorio estou praticando com C#/.Net
+Um livro para apreender algumas principios e pr√°ticas sobre desenvolvimento de software, os exemplos dos livros s√£o em java p√≥rem estou neste repositorio estou praticando com C#/.Net
 
 ## Explicifico do Livro
 + KISS, manter curto e simples 
-+ DRY, n„o manter cÛdigo duplicado, para evitar ter quer fazer multiplas modificaÁıes no cÛdigo
-+ SRP, Responsabilidade Unica, uma classe deve ter apenas uma raz„o para mudar
-+ Coes„o, mensura quanto as responsabilidade da classe ou mÈtodos es„o intimamente relacionadas
++ DRY, n√£o manter c√≥digo duplicado, para evitar ter quer fazer multiplas modifica√ß√µes no c√≥digo
++ SRP, Responsabilidade Unica, uma classe deve ter apenas uma raz√£o para mudar
++ Coes√£o, mensura quanto as responsabilidade da classe ou m√©todos es√£o intimamente relacionadas
 
-Tipo de coes„o | como funciona | pro | contras
----|---|---|
+Tipo de coes√£o | como funciona | pro | contras
+---|---|---|---|
 Funcional | Geralmente um metodo que chama outro | facil de entender | pode levar as classes exageradamamente simplistas
-Informacional | Trabalham nos mesmos dados ou objetos de dominio | F·cil de manter | Pode levar a dependÍncias desnecess·rias
-Sequencia | Agrupa metodo que s„o utilizados em  sequencia um do outro | F·cil de localizar operaÁıes relacionadas | Encoraja a violaÁ„o do SRP
-LÛgica | Se agrupam por uma mesma natureza ou objetivo porem com varias derivaÁıes | Oferece certo tipo de categorizaÁ„o de alto nivel | Encoraja a violaÁ„o do SRP
-Utilit·ria | Agrupa uma serie de metodos que podem ser utilizadso por varios clientes  | simples de implementar | mais dificil de racionalizar a responsabilidade da classe
-Temporal | Relativas ao tempo, com ser chamada na inicializaÁ„o e finalizaÁ„o de operadoÁıes | N\D | mais dificil de entender e utilizar operaÁıes individuais
+Informacional | Trabalham nos mesmos dados ou objetos de dominio | F√°cil de manter | Pode levar a depend√™ncias desnecess√°rias
+Sequencia | Agrupa metodo que s√£o utilizados em  sequencia um do outro | F√°cil de localizar opera√ß√µes relacionadas | Encoraja a viola√ß√£o do SRP
+L√≥gica | Se agrupam por uma mesma natureza ou objetivo porem com varias deriva√ß√µes | Oferece certo tipo de categoriza√ß√£o de alto nivel | Encoraja a viola√ß√£o do SRP
+Utilit√°ria | Agrupa uma serie de metodos que podem ser utilizadso por varios clientes  | simples de implementar | mais dificil de racionalizar a responsabilidade da classe
+Temporal | Relativas ao tempo, com ser chamada na inicializa√ß√£o e finaliza√ß√£o de operado√ß√µes | N\D | mais dificil de entender e utilizar opera√ß√µes individuais
 
-+ ExceÁıes verificadas, s„o aquelas nas caso oferecemos umma maneira de se recuperar
-+ ExceÁıes n„o verificadas, podem ser geradas a qualquer momento da execuÁ„o
-+ Padr„o Notification, classe de dominio so para capturar erros, assim podemos controlar/diminiur a quantidade de fluxos alternativos que mossa aplicaÁ„o ter· quer percorrer, podendo ainda lanÁar um feedback sobre todos os erros cometidos
++ Exce√ß√µes verificadas, s√£o aquelas nas caso oferecemos umma maneira de se recuperar
++ Exce√ß√µes n√£o verificadas, podem ser geradas a qualquer momento da execu√ß√£o
++ Padr√£o Notification, classe de dominio so para capturar erros, assim podemos controlar/diminiur a quantidade de fluxos alternativos que mossa aplica√ß√£o ter√° quer percorrer, podendo ainda lan√ßar um feedback sobre todos os erros cometidos
 
 ## Explicifico do C#/.NET
 + Gerando relatorio de cobertura de testes com xUnit:
 ```bash
 #gerar os dados em  xml
-#j· incluso no xUnit, porem para o nUnit tem que add package coverlet.msbuild 
+#j√° incluso no xUnit, porem para o nUnit tem que add package coverlet.msbuild 
 dotnet test --collect:"XPlat Code Coverage"
 
 #instalar ferramenta nommodo global para gerar relatorios em html
