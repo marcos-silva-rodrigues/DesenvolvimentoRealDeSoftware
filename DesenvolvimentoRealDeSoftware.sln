@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnalizadorDeExtratos.Tests", "AnalizadorDeExtratos.Tests\AnalizadorDeExtratos.Tests.csproj", "{10C08284-90C5-4DEE-8CA5-C139838D67E5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciadorDeDocumentos", "GerenciadorDeDocumentos\GerenciadorDeDocumentos.csproj", "{1353C58E-DB16-4F0B-B6A1-859E8C6DD8D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{10C08284-90C5-4DEE-8CA5-C139838D67E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10C08284-90C5-4DEE-8CA5-C139838D67E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10C08284-90C5-4DEE-8CA5-C139838D67E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1353C58E-DB16-4F0B-B6A1-859E8C6DD8D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1353C58E-DB16-4F0B-B6A1-859E8C6DD8D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1353C58E-DB16-4F0B-B6A1-859E8C6DD8D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1353C58E-DB16-4F0B-B6A1-859E8C6DD8D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
